@@ -1,0 +1,10 @@
+# Reflection:
+# 1. When is a for loop better than a while loop?
+# A for loop is better when you know exactly how many times
+# the loop should run, such as counting or iterating over a range.
+
+# 2. What's one bug you ran into and how did you fix it?
+# A common bug was forgetting to update the variable inside
+# the while loop, which caused an infinite loop.
+# I fixed it by making sure the user's guess was updated
+# every iteration.
