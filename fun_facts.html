@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fun Facts About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #0a3d62;
+        }
+
+        .fact {
+            display: none;
+            margin: 16px auto;
+            padding: 16px;
+            width: 60%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #0a3d62;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3c6382;
+        }
+
+        #counter {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: #e55039;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mekan Chashemow</h1>
+
+    <div id="facts">
+        <div class="fact" id="fact1">Fact 1: I enjoy programming in Go and Python.</div>
+        <div class="fact" id="fact2">Fact 2: I like building CLI applications.</div>
+        <div class="fact" id="fact3">Fact 3: I am interested in backend development.</div>
+        <div class="fact" id="fact4">Fact 4: I study multiple languages.</div>
+        <div class="fact" id="fact5">Fact 5: I enjoy solving logical problems.</div>
+    </div>
+
+    <button id="revealBtn">Reveal Fact</button>
+    <button id="resetBtn">Reset</button>
+
+    <div id="counter">Facts revealed: 0</div>
+    <div id="message"></div>
+
+    <script>
+        const revealBtn = document.getElementById("revealBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const counterText = document.getElementById("counter");
+        const message = document.getElementById("message");
+        const facts = document.querySelectorAll(".fact");
+
+        let currentFact = 0;
+
+        revealBtn.addEventListener("click", function() {
+            if (currentFact < facts.length) {
+                facts[currentFact].style.display = "block";
+                currentFact++;
+                counterText.textContent = "Facts revealed: " + currentFact;
+            } else {
+                message.textContent = "All facts revealed!";
+            }
+        });
+
+        resetBtn.addEventListener("click", function() {
+            facts.forEach(function(fact) {
+                fact.style.display = "none";
+            });
+            currentFact = 0;
+            counterText.textContent = "Facts revealed: 0";
+            message.textContent = "";
+        });
+    </script>
+
+</body>
+</html>

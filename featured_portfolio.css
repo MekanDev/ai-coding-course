@@ -1,0 +1,149 @@
+/* Base light mode */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #0a3d62;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f6b93b;
+}
+
+/* Sections */
+.section {
+    padding: 64px 32px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    color: #0a3d62;
+    margin-bottom: 24px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.tab {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background-color: #0a3d62;
+    color: white;
+}
+
+/* Project cards */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skills list */
+ul {
+    padding-left: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 16px;
+    background-color: #0a3d62;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    .section {
+        padding: 32px 16px;
+    }
+}
+
+/* ===== DARK MODE ===== */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode header {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+.dark-mode nav a {
+    color: #bb86fc;
+}
+
+.dark-mode nav a:hover {
+    color: #ffffff;
+}
+
+.dark-mode .tab {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.dark-mode .tab.active {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}

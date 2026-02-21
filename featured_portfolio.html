@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mekan | Interactive Portfolio</title>
+<link rel="stylesheet" href="featured_portfolio.css">
+</head>
+<body>
+
+<header>
+    <h1>Mekan Chashemow</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button id="darkModeBtn">🌙 Dark Mode</button>
+    </nav>
+</header>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a teenage developer passionate about backend development, CLI apps, and learning new tech.</p>
+</section>
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="tabs">
+        <button class="tab active" data-category="all">All</button>
+        <button class="tab" data-category="python">Python</button>
+        <button class="tab" data-category="web">Web</button>
+        <button class="tab" data-category="games">Games</button>
+    </div>
+
+    <div class="project-list">
+        <div class="card project" data-category="python">
+            <h3>Joke Generator CLI</h3>
+            <p>Python CLI app with API and offline fallback.</p>
+        </div>
+
+        <div class="card project" data-category="web">
+            <h3>Portfolio Website</h3>
+            <p>My interactive portfolio built with HTML, CSS, JS.</p>
+        </div>
+
+        <div class="card project" data-category="games">
+            <h3>Quiz Game</h3>
+            <p>Interactive browser-based quiz game using JavaScript.</p>
+        </div>
+
+        <div class="card project" data-category="python">
+            <h3>Expense Tracker</h3>
+            <p>Python program tracking daily expenses.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python</li>
+        <li>Go (Golang)</li>
+        <li>HTML & CSS</li>
+        <li>Django</li>
+        <li>JavaScript</li>
+    </ul>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: mekan@example.com</p>
+    <p>GitHub: <a href="https://github.com/hezretaly" target="_blank">github.com/hezretaly</a></p>
+</section>
+
+<footer>
+    <p>© 2026 Mekan Chashemow</p>
+</footer>
+
+<script>
+// ===== DARK MODE =====
+const darkModeBtn = document.getElementById("darkModeBtn");
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    if(document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+        darkModeBtn.textContent = "☀️ Light Mode";
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+        darkModeBtn.textContent = "🌙 Dark Mode";
+    }
+}
+
+function loadDarkModePreference() {
+    if(localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        darkModeBtn.textContent = "☀️ Light Mode";
+    }
+}
+
+darkModeBtn.addEventListener("click", toggleDarkMode);
+loadDarkModePreference();
+
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({behavior: "smooth"});
+    });
+});
+
+// ===== PROJECT FILTER =====
+const tabs = document.querySelectorAll(".tab");
+const projects = document.querySelectorAll(".project");
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", function() {
+        // Highlight active tab
+        tabs.forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
+
+        const category = this.dataset.category;
+        projects.forEach(p => {
+            if(category === "all" || p.dataset.category === category) {
+                p.style.display = "block";
+            } else {
+                p.style.display = "none";
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
