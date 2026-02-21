@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movie/Book Tracker</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>Movie/Book Tracker</h1>
+</header>
+
+<main>
+<section class="form-section">
+    <h2>Add Item</h2>
+    <form id="itemForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="genre" placeholder="Genre">
+        <input type="number" id="rating" placeholder="Rating (0-10)" min="0" max="10">
+        <input type="text" id="notes" placeholder="Notes">
+        <button type="submit">Add</button>
+    </form>
+</section>
+
+<section class="filter-section">
+    <h2>Search/Filter</h2>
+    <input type="text" id="searchInput" placeholder="Search by title">
+    <select id="statusFilter">
+        <option value="all">All</option>
+        <option value="want to watch/read">Want to Watch/Read</option>
+        <option value="completed">Completed</option>
+    </select>
+</section>
+
+<section class="items-section">
+    <h2>Items</h2>
+    <div id="itemsContainer"></div>
+</section>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

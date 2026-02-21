@@ -1,0 +1,38 @@
+[
+    {
+        "id": 2,
+        "title": "Sponge",
+        "genre": "cartoon",
+        "rating": "7",
+        "notes": "childhood",
+        "status": "want to watch/read",
+        "timestamp": "2026-02-19 15:32:31"
+    },
+    {
+        "id": 3,
+        "title": "fdsf",
+        "genre": "sdfsf",
+        "rating": "",
+        "notes": "sdf",
+        "status": "completed",
+        "timestamp": "2026-02-21 15:44:03"
+    },
+    {
+        "id": 4,
+        "title": "\u0432\u0432\u0432\u0432\u0432\u0432\u0432",
+        "genre": "\u0432\u044b\u0430",
+        "rating": "3",
+        "notes": "\u0432\u0430\u044b\u0432\u0430",
+        "status": "want to watch/read",
+        "timestamp": "2026-02-21 15:51:35"
+    },
+    {
+        "id": 5,
+        "title": "sdf",
+        "genre": "ffff",
+        "rating": "1",
+        "notes": "dfff",
+        "status": "want to watch/read",
+        "timestamp": "2026-02-21 15:52:04"
+    }
+]

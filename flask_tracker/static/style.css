@@ -1,0 +1,112 @@
+/* ===== BASE ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f4f9;
+    margin: 0;
+    color: #2c3e50;
+}
+
+header {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 24px 0;
+}
+
+/* ===== MAIN CONTAINER ===== */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ===== FORM SECTION ===== */
+.form-section,
+.filter-section {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Inputs */
+input, select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+    font-size: 14px;
+    flex: 1;
+    min-width: 180px;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0a3d62;
+    box-shadow: 0 0 0 2px rgba(10,61,98,0.1);
+}
+
+/* Buttons */
+button {
+    background: #0a3d62;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #3c6382;
+}
+
+#itemsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    #itemsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    #itemsContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== CARD ===== */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card button {
+    margin-top: 10px;
+    margin-right: 6px;
+}
